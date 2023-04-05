@@ -90,13 +90,13 @@ public class SongMain
 
 			while (songByNameScanner.hasNextLine()) 
 			{
-				String line = songByNameScanner.nextLine();
-				String[] parts = line.split(",");
-				String id = parts[0];
-				String name = parts[1];
-				String artist = parts[2];
-				String albumName = parts[3];
-				String year = parts[4];
+				String song = songByNameScanner.nextLine();
+				String[] index = song.split(",");
+				String id = index[0];
+				String name = index[1];
+				String artist = index[2];
+				String albumName = index[3];
+				String year = index[4];
 
 				if (name.equalsIgnoreCase(SongName)) 
 				{
@@ -111,7 +111,7 @@ public class SongMain
 		
 		catch (IOException e) 
 		{
-			System.out.println("An error occured while trying to get: " + songPath.getName());
+			System.out.println("An error occured");
 		}
 		
 		//searchSongs() by year and name
@@ -124,14 +124,14 @@ public class SongMain
 			Scanner songScanner = new Scanner(songPath);
 			while (songScanner.hasNextLine()) 
 			{
-				String line = songScanner.nextLine();
-				String[] parts = line.split(",");
-				String id = parts[0];
-				String name = parts[1];
-				String artist = parts[2];
-				String albumName = parts[3];
-				String year = parts[4];
-
+				String song = songScanner.nextLine();
+				String[] index = song.split(",");
+				String id = index[0];
+				String name = index[1];
+				String artist = index[2];
+				String albumName = index[3];
+				String year = index[4];
+				
 				if (year.equals(userInput) || name.equals(userInput)) 
 				{
 					System.out.println("Name: " + name);
@@ -145,7 +145,7 @@ public class SongMain
 		
 		catch (IOException e) 
 		{
-			System.out.println("An error occured while trying to get: " + songPath.getName());
+			System.out.println("An error occured");
 		}
 		
 		System.out.println();
